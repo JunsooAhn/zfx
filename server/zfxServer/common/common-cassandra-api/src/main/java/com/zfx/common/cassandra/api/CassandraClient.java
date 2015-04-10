@@ -1,4 +1,4 @@
-package com.zfxs.common.cassandra.api;
+package com.zfx.common.cassandra.api;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
