@@ -1,4 +1,4 @@
-package com.moneylocker.common.cassandra.api;
+package com.zfx.common.cassandra.api;
 
 import org.junit.After;
 import org.junit.Before;
