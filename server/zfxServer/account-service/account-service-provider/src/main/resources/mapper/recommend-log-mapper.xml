@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.moneylocker.account.bean.RecommendLog">
+
+	<insert id="addRecommendLog">
+		insert into hq_three_user_credit_register_log 
+			(id, user_id, get_recommended_user_id, get_recommended_user_phone, credit, logTime)
+		values (#{id}, #{rdUserId}, #{rUserId}, #{rPhone}, #{credit}, #{logTime});
+	</insert>
+	
+	<select id="getRecommendCount" resultType="java.lang.Integer">
+		select count(*) from hq_three_user_credit_register_log where user_id = #{userId};
+	</select>
+	
+	<select id="getRecommendDetail" resultType="com.moneylocker.account.bean.RecommendInfo">
+		select get_recommended_user_id as userId, get_recommended_user_phone as phone,
+			   credit as credit, logTime as logTime
+	    from hq_three_user_credit_register_log where user_id = #{userId} order by logTime desc;
+	</select>
+</mapper>  

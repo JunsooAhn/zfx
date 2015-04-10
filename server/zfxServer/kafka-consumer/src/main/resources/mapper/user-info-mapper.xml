@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.moneylocker.account.bean.UserInfo">
+	<sql id="userInfoColumns">
+		id as userId,
+		user_nick as nickName ,
+		user_recommended_Code
+		as recommendedCode,
+		user_origin as userOrigin,
+		user_gender as gender,
+		user_birthday as birthday,
+		user_phone as phone,
+		view_hsp_info_flg as
+		viewHspInfoFlg,
+		user_baidu_id
+		as baiduId,
+		user_baidu_channel_id as
+		baiduChannelId,
+		state as state
+	</sql>
+	
+	<select id="findByUserId" resultType="com.moneylocker.account.bean.UserInfo">
+		select
+		<include refid="userInfoColumns" />
+		,
+		is_white as isWhite, user_regtime as userRegtime ,
+		user_password as userPassword, user_cheat_state as userCheatState
+		from hq_user_info
+		where id = #{userId};
+	</select>
+
+</mapper>  

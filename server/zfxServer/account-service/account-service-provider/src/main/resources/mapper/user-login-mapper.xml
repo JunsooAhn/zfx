@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.moneylocker.account.bean.UserLogin">
+
+	<sql id="loginColumns">
+		user_id as userId,
+		login_time as loginTime
+	</sql>
+
+	<select id="getUserLoginByLoginId" resultType="com.moneylocker.account.bean.LoginInfo">
+		select
+		<include refid="loginColumns" />
+		from ml_user_login_statistic where id = #{loginId};
+	</select>
+	
+	<select id="getUserLoginIdByUserId" resultType="java.lang.String">
+		select id from ml_user_login_statistic where user_id = #{userId};
+	</select>
+
+	<insert id="saveUserLoginInfo" >
+		insert into ml_user_login_statistic(id , user_id ,login_time) values(#{id} , #{userId},#{loginTime}) ON DUPLICATE KEY UPDATE id = #{id}  ;
+	</insert>
+	
+	<delete id="delete">
+		delete from ml_user_login_statistic where user_id = #{userId};
+	</delete>
+</mapper>  

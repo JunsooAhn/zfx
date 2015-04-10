@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.moneylocker.account.bean.UserLoginResult">
+	<insert id="insertUserIntoCheatLog">
+		insert into ml_user_cheat_log (user_id, imei,
+		model, manufacturer, os_version,app_version, android_id,mac_address, proc_date)
+		values (#{userId}, #{imei}, #{model}, #{manufacturer},#{osVersion},#{appVersion}, #{androidId}, #{macAddress}, #{procDate});
+	</insert>
+	<delete id="deleteUserFromCheatLog">
+	    delete from ml_user_cheat_log where user_id = #{userId};
+	</delete>
+</mapper>  

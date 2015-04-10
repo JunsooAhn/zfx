@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+		http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+	
+	<dubbo:provider timeout="5000" />
+	
+	<dubbo:consumer timeout="5000" />
+	
+	<dubbo:service interface="com.moneylocker.account.service.AccountService" ref="accountService" />
+	
+	<dubbo:service interface="com.moneylocker.account.service.LoginService" ref="loginService" />
+	
+	<dubbo:service interface="com.moneylocker.account.service.RecommendService" ref="recommendService" />
+	
+	<dubbo:reference id="userCreditService" interface="com.moneylocker.credit.service.UserCreditService" />
+	
+	<dubbo:registry protocol="zookeeper" address="122.144.134.67:2181,122.144.134.67:2182,122.144.134.67:2183" />
+</beans>

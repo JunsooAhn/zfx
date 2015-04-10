@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>  
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.moneylocker.account.bean.ImeiPhoneLog">
+
+	<select id="getImeiPhoneLog" resultType="com.moneylocker.account.bean.ImeiPhoneLog">
+		select imei, phone, count, day, android_id as androidId, mac_address as macAddress from ml_imei_phone_log u 
+		where u.imei = #{imei} and u.android_id=#{androidId} and u.mac_address=#{macAddress}" ;
+	</select>
+	
+	<insert id="saveImeiPhoneLog">
+		insert ignore into ml_imei_phone_log(imei, phone, count, day, android_id, mac_address) values(#{imei}, #{phone} ,0, #{day}, #{androidId}, #{macAddress}) ;
+	</insert>
+	
+	<update id="updateNewDayImeiPhoneLog">
+		update ml_imei_phone_log set count = 0, day = #{day}, phone = #{phone} 
+		where imei = #{imei} and android_id=#{androidId} and mac_address=#{macAddress};
+	</update>
+	
+	<update id="updateImeiPhoneLogCount">
+		update ml_imei_phone_log set count = count + 1, phone = #{phone} 
+		where imei = #{imei} and android_id=#{androidId} and mac_address=#{macAddress} ;
+	</update>
+</mapper>  

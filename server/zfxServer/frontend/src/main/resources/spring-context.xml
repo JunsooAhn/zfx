@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+						http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+						http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+						http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+						http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+	<context:component-scan base-package="com.moneylocker" />
+	<mvc:annotation-driven>
+		<mvc:message-converters>
+			<bean class="com.alibaba.fastjson.support.spring.FastJsonHttpMessageConverter" />
+		</mvc:message-converters>
+	</mvc:annotation-driven>
+	<aop:aspectj-autoproxy />
+	
+	<bean class="com.moneylocker.frontend.common.processor.RequestClassBeanPostProcessor"/>
+	
+	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+		<property name="locations">
+			<list>
+				<value>classpath:memcached.properties</value>
+				<value>classpath:zkpublisher.properties</value>
+			</list>
+		</property>
+	</bean>
+
+	<import resource="classpath:all-consumer.xml" />
+	<import resource="classpath:common-spring-context-memcache.xml" />
+	<import resource="classpath:common-spring-context-kafka-producer.xml"/>
+	<import resource="classpath:common-spring-verifiers.xml"/>
+	<import resource="classpath:zkpublisher.application.xml" />
+	
+	<mvc:interceptors>
+		<mvc:interceptor >
+			<mvc:mapping path="/**"/>
+			<bean class="com.moneylocker.frontend.common.interceptor.DecryptInterceptor"/>
+		</mvc:interceptor>
+		<mvc:interceptor >
+			<mvc:mapping path="/**"/>
+			<bean class="com.moneylocker.frontend.common.interceptor.DuplicateRequestInterceptor"/>
+		</mvc:interceptor>
+		<mvc:interceptor >
+			<mvc:mapping path="/**"/>
+			<mvc:exclude-mapping path="/login/**"/>
+			<mvc:exclude-mapping path="/register/**"/>
+			<mvc:exclude-mapping path="/account/retrieve/password"/>
+			<mvc:exclude-mapping path="/verify/**"/>
+			<bean class="com.moneylocker.frontend.account.interceptor.LoginInterceptor"/>
+		</mvc:interceptor>
+	</mvc:interceptors>
+	
+	<bean class="com.moneylocker.frontend.common.exception.ServerExceptionHandler" />
+	
+	<bean class="com.moneylocker.frontend.common.bean.ActivityCreditConfig" scope="singleton">
+		<property name="propertyName" value="activity-credit-config.properties" />
+	</bean>
+	<bean class="com.moneylocker.frontend.common.bean.AccountConfig" scope="singleton">
+		<property name="propertyName" value="account-config.properties" />
+	</bean>
+</beans>

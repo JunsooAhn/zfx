@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+		http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+	
+	<dubbo:application name="frontend-consumer" />
+	
+	<dubbo:registry protocol="zookeeper" address="122.144.134.67:2181,122.144.134.67:2182,122.144.134.67:2183" />
+	
+	<dubbo:consumer timeout="5000" />
+	
+	<import resource="classpath:credit-consumer.xml" />
+	<import resource="classpath:account-consumer.xml" />
+	<import resource="classpath:ad-consumer.xml" />
+	<import resource="classpath:mall-consumer.xml" />
+</beans>
