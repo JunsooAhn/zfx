@@ -384,11 +384,13 @@
 				<artifactId>dubbo</artifactId>
 				<version>${dubbo_version}</version>
 			</dependency>
+			<!--
 			<dependency>
 				<groupId>com.alibaba.cobar</groupId>
 				<artifactId>cobar-driver</artifactId>
 				<version>${cobar_driver_version}</version>
 			</dependency>
+			  -->
 			<dependency>
 				<groupId>javax.servlet</groupId>
 				<artifactId>servlet-api</artifactId>
@@ -610,10 +612,12 @@
 			<groupId>com.alibaba</groupId>
 			<artifactId>druid</artifactId>
 		</dependency>
+		<!-- 
 		<dependency>
 			<groupId>com.alibaba.cobar</groupId>
 			<artifactId>cobar-driver</artifactId>
 		</dependency>
+		 -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>

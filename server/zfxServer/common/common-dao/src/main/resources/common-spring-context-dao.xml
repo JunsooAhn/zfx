@@ -8,7 +8,7 @@
 						http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 	
 	<bean id="serviceSqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
-		<property name="configLocation" value="mybatis-config.xml" />
+		<property name="configLocation" value="classpath:mybatis-config.xml" />
 		<property name="dataSource" ref="serviceDataSource" />
 	</bean>
 

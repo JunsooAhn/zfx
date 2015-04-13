@@ -20,7 +20,6 @@ public class DuplicateRequestInterceptor implements HandlerInterceptor {
 
 	private static Logger logger = LoggerFactory.getLogger(DuplicateRequestInterceptor.class);
 
-	@Autowired
 	private MemcachedService memcachedService;
 
 	@Override

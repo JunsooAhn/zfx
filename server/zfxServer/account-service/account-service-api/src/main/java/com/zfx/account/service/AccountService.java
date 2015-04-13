@@ -16,8 +16,6 @@ public interface AccountService {
 	
 	public int rebindPhone(String userId, String phone, String oldPhone, String password, Short verType,
 			int allowRebindAfterDays);
-
-	public int updateBaiduId(String userId, String baiduId, String userBaiduChannelId);
 	
 	public boolean checkPassword(String userId, String password);
 	

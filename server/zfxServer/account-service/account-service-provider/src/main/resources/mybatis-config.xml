@@ -3,9 +3,6 @@
 <configuration>  
     <mappers>
     	<mapper resource="mapper/user-info-mapper.xml" />  
-    	<mapper resource="mapper/imei-phone-log-mapper.xml" />  
     	<mapper resource="mapper/user-login-mapper.xml" />
-    	<mapper resource="mapper/recommend-log-mapper.xml" />
-    	<mapper resource="mapper/user-cheat-mapper.xml"/>
     </mappers>  
 </configuration>   

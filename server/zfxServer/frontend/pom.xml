@@ -17,22 +17,12 @@
 	<dependencies>
 		<dependency>
 			<groupId>com.zfx</groupId>
-			<artifactId>credit-service-api</artifactId>
-			<version>${project.parent.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.zfx</groupId>
 			<artifactId>account-service-api</artifactId>
 			<version>${project.parent.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>com.zfx</groupId>
-			<artifactId>mall-service-api</artifactId>
-			<version>${project.parent.version}</version>
-		</dependency>
-		<dependency>
-			<groupId>com.zfx</groupId>
-			<artifactId>ad-service-api</artifactId>
+			<artifactId>account-service-provider</artifactId>
 			<version>${project.parent.version}</version>
 		</dependency>
 		<dependency>

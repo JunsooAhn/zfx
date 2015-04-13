@@ -18,7 +18,7 @@ public class MemcachedServiceImpl implements MemcachedService {
 
 	protected MemcachedClient memcachedClient;
 
-	@Autowired
+	//@Autowired
 	public void setMemcachedClient(MemcachedClient memcachedClient) {
 		this.memcachedClient = memcachedClient;
 	}

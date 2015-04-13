@@ -109,27 +109,27 @@ public class RegisterRequest extends Request {
 
 	@Override
 	public Response validate() {
-		if (!StringUtils.isValidImei(imei)) {
-			return Response.build(Response.PARAM_INVALID, MsgContants.REGISTER_IMEI_INVALID);
-		}
-
-		if (StringUtils.isEmpty(password)) {
-			return Response.build(Response.PARAM_INVALID, MsgContants.REGISTER_PASSWORD_EMPTY);
-		}
-
-		if (!StringUtils.isValidPhone(phone)) {
-			return Response.build(Response.PARAM_INVALID, MsgContants.REGISTER_PHONE_INVALID);
-		}
-
-		if (StringUtils.isEmpty(verifyCode)) {
-			return Response.build(Response.PARAM_INVALID, MsgContants.REGISTER_VERIFY_CODE_EMPTY);
-		}
-		if (StringUtils.isEmpty(this.androidId)) {
-			return Response.build(Response.PARAM_INVALID, MsgContants.REGISTER_ANDROID_ID_INVALID);
-		}
-		if (StringUtils.isEmpty(this.macAddress)) {
-			return Response.build(Response.PARAM_INVALID, MsgContants.REGISTER_MAC_ADDRESS_INVALID);
-		}
+//		if (!StringUtils.isValidImei(imei)) {
+//			return Response.build(Response.PARAM_INVALID, MsgContants.REGISTER_IMEI_INVALID);
+//		}
+//
+//		if (StringUtils.isEmpty(password)) {
+//			return Response.build(Response.PARAM_INVALID, MsgContants.REGISTER_PASSWORD_EMPTY);
+//		}
+//
+//		if (!StringUtils.isValidPhone(phone)) {
+//			return Response.build(Response.PARAM_INVALID, MsgContants.REGISTER_PHONE_INVALID);
+//		}
+//
+//		if (StringUtils.isEmpty(verifyCode)) {
+//			return Response.build(Response.PARAM_INVALID, MsgContants.REGISTER_VERIFY_CODE_EMPTY);
+//		}
+//		if (StringUtils.isEmpty(this.androidId)) {
+//			return Response.build(Response.PARAM_INVALID, MsgContants.REGISTER_ANDROID_ID_INVALID);
+//		}
+//		if (StringUtils.isEmpty(this.macAddress)) {
+//			return Response.build(Response.PARAM_INVALID, MsgContants.REGISTER_MAC_ADDRESS_INVALID);
+//		}
 		return null;
 	}
 

@@ -10,7 +10,9 @@
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="locations">
 			<list>
+			    <!-- 
 				<value>classpath:memcached.properties</value>
+				 -->
 				<value>classpath:jdbc.properties</value>
 			</list>
 		</property>
@@ -18,8 +20,9 @@
 	<context:component-scan base-package="com.zfx" />
 	<aop:aspectj-autoproxy />
 
-    <bean id="userCreditService" class="com.zfx.account.service.impl.MockUserCreditServiceImpl" /> 
 	<import resource="classpath:common-spring-context-dao.xml"/>
+	<!--
   	<import resource="classpath:common-spring-context-memcache.xml"/>
   	<import resource="classpath:common-spring-context-kafka-producer.xml"/>
+  	-->
 </beans>

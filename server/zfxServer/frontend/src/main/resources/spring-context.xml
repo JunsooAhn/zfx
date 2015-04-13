@@ -22,8 +22,10 @@
 	<bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
 		<property name="locations">
 			<list>
+			    <!--
 				<value>classpath:memcached.properties</value>
 				<value>classpath:zkpublisher.properties</value>
+				  -->
 			</list>
 		</property>
 	</bean>

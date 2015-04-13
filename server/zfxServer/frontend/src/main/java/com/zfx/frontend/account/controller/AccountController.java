@@ -6,13 +6,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.zfx.account.constant.RebindPhoneState;
 import com.zfx.account.constant.UpdateInfoState;
-import com.zfx.account.constant.UserVerifyType;
 import com.zfx.account.service.AccountService;
-import com.zfx.common.service.MemcachedService;
-import com.zfx.credit.constant.CreditOperations;
-import com.zfx.credit.service.UserCreditService;
 import com.zfx.frontend.account.bean.request.BindPhoneRequest;
 import com.zfx.frontend.account.bean.request.CheckPasswordRequest;
 import com.zfx.frontend.account.bean.request.CheckPhoneRequest;
@@ -29,12 +24,7 @@ import com.zfx.frontend.account.bean.response.RebindPhoneResponse;
 import com.zfx.frontend.account.bean.response.RetrievePasswordResponse;
 import com.zfx.frontend.account.bean.response.UpdateUserInfoResponse;
 import com.zfx.frontend.account.constant.MsgContants;
-import com.zfx.frontend.common.bean.AccountConfig;
-import com.zfx.frontend.common.bean.ActivityCreditConfig;
-import com.zfx.frontend.common.bean.Response;
-import com.zfx.frontend.common.bean.VerifyInfo;
 import com.zfx.frontend.common.constant.CommonConstant;
-import com.zfx.frontend.common.constant.MemcacheKeyConstants;
 import com.zfx.frontend.common.controller.BaseController;
 
 @Controller
@@ -44,17 +34,7 @@ public class AccountController extends BaseController {
 	@Autowired
 	private AccountService accountService;
 
-	@Autowired
-	private UserCreditService userCreditService;
 
-	@Autowired
-	private MemcachedService memcachedService;
-
-	@Autowired
-	private ActivityCreditConfig activityCreditConfig;
-
-	@Autowired
-	private AccountConfig accountConfig;
 
 	@RequestMapping(value = "update/nickname")
 	@ResponseBody
@@ -63,27 +43,6 @@ public class AccountController extends BaseController {
 		int updateInfoState = accountService.updateUserNick(updateNicknameRequest.getUserId(),
 				updateNicknameRequest.getNickName());
 		UpdateUserInfoResponse updateUserInfoResponse = new UpdateUserInfoResponse();
-		if (updateInfoState == UpdateInfoState.NICK_NAME_EXIST) {
-			updateUserInfoResponse.setStatusCode(UpdateUserInfoResponse.NICK_NAME_EXIST);
-			updateUserInfoResponse.setMsg(MsgContants.NICK_NAME_EXIST);
-		} else if (updateInfoState == UpdateInfoState.SUCCESS_FIRST_TIME) {
-			updateUserInfoResponse.setStatusCode(UpdateUserInfoResponse.SUCCESS_FIRST_TIME);
-			// 第一次更新，添加积分
-			if (userCreditService.obtainCredit(updateNicknameRequest.getUserId(),
-					activityCreditConfig.getUpdateNicknameCredit(),
-					CreditOperations.ACTIVITY)) {
-				updateUserInfoResponse.setMsg(MsgContants.NICK_NAME_UPDATE_WITH_CREDIT
-						+ activityCreditConfig.getUpdateNicknameCredit() * 0.01 + "元！");
-			} else {
-				updateUserInfoResponse.setMsg(MsgContants.NICK_NAME_UPDATE_SUCCESS);
-			}
-		} else if (updateInfoState == UpdateInfoState.SUCCESS) {
-			updateUserInfoResponse.setStatusCode(UpdateUserInfoResponse.SUCCESS);
-			updateUserInfoResponse.setMsg(MsgContants.NICK_NAME_UPDATE_SUCCESS);
-		} else {
-			updateUserInfoResponse.setStatusCode(UpdateUserInfoResponse.FAILED);
-			updateUserInfoResponse.setMsg(MsgContants.NICK_NAME_UPDATE_FAILD);
-		}
 		return updateUserInfoResponse;
 	}
 
@@ -95,25 +54,6 @@ public class AccountController extends BaseController {
 				updateGenderRequest.getGender());
 
 		UpdateUserInfoResponse updateUserInfoResponse = new UpdateUserInfoResponse();
-		if (updateInfoState == UpdateInfoState.SUCCESS_FIRST_TIME) {
-			updateUserInfoResponse.setStatusCode(UpdateUserInfoResponse.SUCCESS_FIRST_TIME);
-			// 第一次更新，添加积分
-			if (userCreditService.obtainCredit(updateGenderRequest.getUserId(),
-					activityCreditConfig.getUpdateGenderCredit(),
-					CreditOperations.ACTIVITY)) {
-				updateUserInfoResponse.setMsg(MsgContants.GENDER_UPDATE_WITH_CREDIT
-						+ activityCreditConfig.getUpdateGenderCredit()
- * 0.01 + "元！");
-			} else {
-				updateUserInfoResponse.setMsg(MsgContants.GENDER_UPDATE_SUCCESS);
-			}
-		} else if (updateInfoState == UpdateInfoState.SUCCESS) {
-			updateUserInfoResponse.setStatusCode(UpdateUserInfoResponse.SUCCESS);
-			updateUserInfoResponse.setMsg(MsgContants.GENDER_UPDATE_SUCCESS);
-		} else {
-			updateUserInfoResponse.setStatusCode(UpdateUserInfoResponse.FAILED);
-			updateUserInfoResponse.setMsg(MsgContants.GENDER_UPDATE_FAILD);
-		}
 		return updateUserInfoResponse;
 	}
 
@@ -124,24 +64,6 @@ public class AccountController extends BaseController {
 		int updateInfoState = accountService.updateBirthday(updateBirthdayRequest.getUserId(),
 				updateBirthdayRequest.getBirthday());
 		UpdateUserInfoResponse updateUserInfoResponse = new UpdateUserInfoResponse();
-		if (updateInfoState == UpdateInfoState.SUCCESS_FIRST_TIME) {
-			updateUserInfoResponse.setStatusCode(UpdateUserInfoResponse.SUCCESS_FIRST_TIME);
-			// 第一次更新，添加积分
-			if (userCreditService.obtainCredit(updateBirthdayRequest.getUserId(),
-					activityCreditConfig.getUpdateBirthdayCredit(),
-					CreditOperations.ACTIVITY)) {
-				updateUserInfoResponse.setMsg(MsgContants.BIRTHDAY_UPDATE_WITH_CREDIT
-						+ activityCreditConfig.getUpdateBirthdayCredit() * 0.01 + "元！");
-			} else {
-				updateUserInfoResponse.setMsg(MsgContants.BIRTHDAY_UPDATE_SUCCESS);
-			}
-		} else if (updateInfoState == UpdateInfoState.SUCCESS) {
-			updateUserInfoResponse.setStatusCode(UpdateUserInfoResponse.SUCCESS);
-			updateUserInfoResponse.setMsg(MsgContants.BIRTHDAY_UPDATE_SUCCESS);
-		} else {
-			updateUserInfoResponse.setStatusCode(UpdateUserInfoResponse.FAILED);
-			updateUserInfoResponse.setMsg(MsgContants.BIRTHDAY_UPDATE_FAILD);
-		}
 		return updateUserInfoResponse;
 	}
 
@@ -171,24 +93,6 @@ public class AccountController extends BaseController {
 			@ModelAttribute(CommonConstant.MODEL_ATTRIBUTE) UpdateViewWebsiteRequest updateViewWebsiteRequest) {
 		int updateInfoState = accountService.updateViewWebsite(updateViewWebsiteRequest.getUserId());
 		UpdateUserInfoResponse updateUserInfoResponse = new UpdateUserInfoResponse();
-		if (updateInfoState == UpdateInfoState.SUCCESS_FIRST_TIME) {
-			updateUserInfoResponse.setStatusCode(UpdateUserInfoResponse.SUCCESS_FIRST_TIME);
-			// 第一次更新，添加积分
-			if (userCreditService.obtainCredit(updateViewWebsiteRequest.getUserId(),
-					activityCreditConfig.getViewWebsiteCredit(),
-					CreditOperations.ACTIVITY)) {
-				updateUserInfoResponse.setMsg(MsgContants.VIEW_WEBSITE_UPDATE_WITH_CREDIT
-						+ activityCreditConfig.getViewWebsiteCredit() * 0.01 + "元！");
-			} else {
-				updateUserInfoResponse.setMsg(MsgContants.VIEW_WEBSITE_UPDATE_SUCCESS);
-			}
-		} else if (updateInfoState == UpdateInfoState.SUCCESS) {
-			updateUserInfoResponse.setStatusCode(UpdateUserInfoResponse.SUCCESS);
-			updateUserInfoResponse.setMsg(MsgContants.VIEW_WEBSITE_UPDATE_SUCCESS);
-		} else {
-			updateUserInfoResponse.setStatusCode(UpdateUserInfoResponse.FAILED);
-			updateUserInfoResponse.setMsg(MsgContants.VIEW_WEBSITE_UPDATE_FAILD);
-		}
 		return updateUserInfoResponse;
 	}
 
@@ -227,64 +131,15 @@ public class AccountController extends BaseController {
 	@ResponseBody
 	public RetrievePasswordResponse findbackPassword(
 			@ModelAttribute(CommonConstant.MODEL_ATTRIBUTE) RetrievePasswordRequest retrievePasswordRequest) {
-		String memcacheKey = MemcacheKeyConstants.VERFY_CODE_PREFIX + retrievePasswordRequest.getPhone();
-		VerifyInfo verifyInfo = (VerifyInfo) memcachedService.memcachedGet(memcacheKey);
-		RetrievePasswordResponse retrievePasswordResponse = new RetrievePasswordResponse();
-		if (verifyInfo == null || !verifyInfo.getVerifyCode().equals(retrievePasswordRequest.getVerifyCode())) {
-			retrievePasswordResponse.setStatusCode(RetrievePasswordResponse.VERIFY_ERROR);
-			retrievePasswordResponse.setMsg(MsgContants.RETRIEVE_PASSWORD_VERIFY_ERROR);
-		} else {
-			int updateInfoState = accountService.findBackPassword(retrievePasswordRequest.getImei(),
-					retrievePasswordRequest.getPhone(), retrievePasswordRequest.getPassword());
-			if (updateInfoState == UpdateInfoState.USER_NOT_EXIST) {
-				retrievePasswordResponse.setStatusCode(RetrievePasswordResponse.PHONE_NOT_EXIST);
-				retrievePasswordResponse.setMsg(MsgContants.RETRIEVE_PASSWORD_USER_NOT_EXIST);
-			} else if (updateInfoState == UpdateInfoState.SUCCESS) {
-				retrievePasswordResponse.setStatusCode(Response.SUCCESS);
-				retrievePasswordResponse.setMsg(MsgContants.RETRIEVE_PASSWORD_SUCCESS);
-			} else {
-				retrievePasswordResponse.setStatusCode(Response.FAILED);
-				retrievePasswordResponse.setMsg(MsgContants.RETRIEVE_PASSWORD_FAILED);
-			}
-		}
-		return retrievePasswordResponse;
+		return  null;
 	}
 
 	@RequestMapping(value = "bind/phone")
 	@ResponseBody
 	public UpdateUserInfoResponse bindPhone(
 			@ModelAttribute(CommonConstant.MODEL_ATTRIBUTE) BindPhoneRequest bindPhoneRequest) {
-		String memcacheKey = MemcacheKeyConstants.VERFY_CODE_PREFIX + bindPhoneRequest.getPhone();
-		VerifyInfo verifyInfo = (VerifyInfo) memcachedService.memcachedGet(memcacheKey);
 		UpdateUserInfoResponse updateUserInfoResponse = new UpdateUserInfoResponse();
 
-		if (verifyInfo == null || !verifyInfo.getVerifyCode().equals(bindPhoneRequest.getVerifyCode())) {
-			updateUserInfoResponse.setStatusCode(UpdateUserInfoResponse.VERIFY_ERROR);
-			updateUserInfoResponse.setMsg(MsgContants.BIND_PHONE_VERIFY_ERROR);
-			return updateUserInfoResponse;
-		}
-		int updateInfoState = accountService.bindPhone(bindPhoneRequest.getUserId(), bindPhoneRequest.getPhone(),
-				bindPhoneRequest.getPassword(), (short) verifyInfo.getVerifyType());
-
-		if (updateInfoState == UpdateInfoState.SUCCESS_FIRST_TIME) {
-			updateUserInfoResponse.setStatusCode(UpdateUserInfoResponse.SUCCESS_FIRST_TIME);
-			// 第一次更新，添加积分
-			int credit = activityCreditConfig.getRegisterSmsCredit();
-			if (verifyInfo.getVerifyType() == UserVerifyType.VOICE) {
-				credit = activityCreditConfig.getRegisterVoiceCredit();
-			}
-			if (userCreditService.obtainCredit(bindPhoneRequest.getUserId(), credit, CreditOperations.ACTIVITY)) {
-				updateUserInfoResponse.setMsg(MsgContants.BIND_PHONE_SUCCESS_WITH_CREDIT + credit * 0.01 + "元！");
-			} else {
-				updateUserInfoResponse.setMsg(MsgContants.BIND_PHONE_SUCCESS);
-			}
-		} else if (updateInfoState == UpdateInfoState.SUCCESS) {
-			updateUserInfoResponse.setStatusCode(UpdateUserInfoResponse.SUCCESS);
-			updateUserInfoResponse.setMsg(MsgContants.BIND_PHONE_SUCCESS);
-		} else {
-			updateUserInfoResponse.setStatusCode(UpdateUserInfoResponse.FAILED);
-			updateUserInfoResponse.setMsg(MsgContants.BIND_PHONE_ERROR);
-		}
 		return updateUserInfoResponse;
 	}
 
@@ -292,36 +147,8 @@ public class AccountController extends BaseController {
 	@ResponseBody
 	public RebindPhoneResponse rebindPhone(
 			@ModelAttribute(CommonConstant.MODEL_ATTRIBUTE) ReBindPhoneRequest reBindPhoneRequest) {
-		String memcacheKey = MemcacheKeyConstants.VERFY_CODE_PREFIX + reBindPhoneRequest.getPhone();
-		VerifyInfo verifyInfo = (VerifyInfo) memcachedService.memcachedGet(memcacheKey);
 		RebindPhoneResponse rebindPhoneResponse = new RebindPhoneResponse();
 
-		if (verifyInfo == null || !verifyInfo.getVerifyCode().equals(reBindPhoneRequest.getVerifyCode())) {
-			rebindPhoneResponse.setStatusCode(RebindPhoneResponse.VERIFY_ERROR);
-			rebindPhoneResponse.setMsg(MsgContants.REBIND_PHONE_VERIFY_ERROR);
-			return rebindPhoneResponse;
-		}
-		int rebindPhoneState = accountService.rebindPhone(reBindPhoneRequest.getUserId(),
-				reBindPhoneRequest.getPhone(), reBindPhoneRequest.getOldPhone(), reBindPhoneRequest.getPassword(),
-				(short) verifyInfo.getVerifyType(), accountConfig.getAllowRebindAfterDays());
-
-		if (rebindPhoneState == RebindPhoneState.SUCCESS) {
-			rebindPhoneResponse.setStatusCode(RebindPhoneResponse.SUCCESS);
-			rebindPhoneResponse.setMsg(MsgContants.REBIND_PHONE_SUCCESS);
-		} else if (rebindPhoneState == RebindPhoneState.OLD_PHONE_ERROR) {
-			rebindPhoneResponse.setStatusCode(RebindPhoneResponse.OLD_PHONE_WRONG);
-			rebindPhoneResponse.setMsg(MsgContants.REBIND_PHONE_OLD_PHONE_WRONG);
-		} else if (rebindPhoneState == RebindPhoneState.PASSWORD_WRONG) {
-			rebindPhoneResponse.setStatusCode(RebindPhoneResponse.PASSWORD_WRONG);
-			rebindPhoneResponse.setMsg(MsgContants.REBIND_PHONE_PASSWORD_WRONG);
-		} else if (rebindPhoneState == RebindPhoneState.BIND_TOO_FRENQUENTLY) {
-			rebindPhoneResponse.setStatusCode(RebindPhoneResponse.FAILED);
-			rebindPhoneResponse.setMsg(String.format(MsgContants.REBIND_TOO_FREQUENTLY,
-					accountConfig.getAllowRebindAfterDays()));
-		} else {
-			rebindPhoneResponse.setStatusCode(RebindPhoneResponse.FAILED);
-			rebindPhoneResponse.setMsg(MsgContants.REBIND_PHONE_ERROR);
-		}
 		return rebindPhoneResponse;
 	}
 }

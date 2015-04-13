@@ -45,8 +45,8 @@ public class AESTools {
 	}
 
 	public static <T> T decrypt(String jsonParam, Class<T> resultType) throws Exception {
-		jsonParam = URLDecoder.decode(jsonParam, ENCODING);
-		jsonParam = decode(jsonParam);
+//		jsonParam = URLDecoder.decode(jsonParam, ENCODING);
+//		jsonParam = decode(jsonParam);
 		return JSON.parseObject(jsonParam, resultType);
 	}
 
