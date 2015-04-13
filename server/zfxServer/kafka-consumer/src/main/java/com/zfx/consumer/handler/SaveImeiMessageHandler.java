@@ -1,10 +1,10 @@
-package com.moneylocker.consumer.handler;
+package com.zfx.consumer.handler;
 
 import kafka.message.MessageAndMetadata;
 
-import com.moneylocker.account.bean.ImeiPhoneLog;
-import com.moneylocker.common.util.JSONUtil;
-import com.moneylocker.consumer.dao.ImeiPhoneDao;
+import com.zfx.account.bean.ImeiPhoneLog;
+import com.zfx.common.util.JSONUtil;
+import com.zfx.consumer.dao.ImeiPhoneDao;
 
 public class SaveImeiMessageHandler implements MessageHandler {
 

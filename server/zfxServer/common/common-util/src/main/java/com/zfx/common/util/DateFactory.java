@@ -1,4 +1,4 @@
-package com.moneylocker.common.util;
+package com.zfx.common.util;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;

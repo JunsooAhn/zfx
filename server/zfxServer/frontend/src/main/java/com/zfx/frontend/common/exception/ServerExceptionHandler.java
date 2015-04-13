@@ -1,4 +1,4 @@
-package com.moneylocker.frontend.common.exception;
+package com.zfx.frontend.common.exception;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -8,11 +8,11 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.servlet.HandlerExceptionResolver;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.moneylocker.common.util.JSONUtil;
-import com.moneylocker.frontend.common.bean.Request;
-import com.moneylocker.frontend.common.bean.Response;
-import com.moneylocker.frontend.common.constant.CommonConstant;
-import com.moneylocker.frontend.common.constant.MsgContants;
+import com.zfx.common.util.JSONUtil;
+import com.zfx.frontend.common.bean.Request;
+import com.zfx.frontend.common.bean.Response;
+import com.zfx.frontend.common.constant.CommonConstant;
+import com.zfx.frontend.common.constant.MsgContants;
 
 public class ServerExceptionHandler implements HandlerExceptionResolver {
 

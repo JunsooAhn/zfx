@@ -1,4 +1,4 @@
-package com.moneylocker.frontend.common.controller;
+package com.zfx.frontend.common.controller;
 
 import java.util.Date;
 
@@ -9,20 +9,20 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.moneylocker.account.constant.UserVerifyType;
-import com.moneylocker.common.bean.VerifyLog;
-import com.moneylocker.common.constant.CommonConstants;
-import com.moneylocker.common.constant.KafkaMessagesConst;
-import com.moneylocker.common.service.MemcachedService;
-import com.moneylocker.common.util.KafkaProducer;
-import com.moneylocker.common.util.RandomUtil;
-import com.moneylocker.common.util.verify.VerifyInterface;
-import com.moneylocker.frontend.common.bean.Response;
-import com.moneylocker.frontend.common.bean.VerifyInfo;
-import com.moneylocker.frontend.common.bean.VerifyRequest;
-import com.moneylocker.frontend.common.constant.CommonConstant;
-import com.moneylocker.frontend.common.constant.MemcacheKeyConstants;
-import com.moneylocker.frontend.common.constant.MsgContants;
+import com.zfx.account.constant.UserVerifyType;
+import com.zfx.common.bean.VerifyLog;
+import com.zfx.common.constant.CommonConstants;
+import com.zfx.common.constant.KafkaMessagesConst;
+import com.zfx.common.service.MemcachedService;
+import com.zfx.common.util.KafkaProducer;
+import com.zfx.common.util.RandomUtil;
+import com.zfx.common.util.verify.VerifyInterface;
+import com.zfx.frontend.common.bean.Response;
+import com.zfx.frontend.common.bean.VerifyInfo;
+import com.zfx.frontend.common.bean.VerifyRequest;
+import com.zfx.frontend.common.constant.CommonConstant;
+import com.zfx.frontend.common.constant.MemcacheKeyConstants;
+import com.zfx.frontend.common.constant.MsgContants;
 
 @Controller
 @RequestMapping("verify")

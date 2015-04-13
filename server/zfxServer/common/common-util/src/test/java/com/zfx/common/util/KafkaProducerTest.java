@@ -1,4 +1,4 @@
-package com.moneylocker.common.util;
+package com.zfx.common.util;
 
 import org.junit.After;
 import org.junit.Before;

@@ -12,7 +12,7 @@
 						http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-3.2.xsd
 						http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
-	<context:component-scan base-package="com.moneylocker" />
+	<context:component-scan base-package="com.zfx" />
 	<aop:aspectj-autoproxy />
 
 	<import resource="classpath:common-spring-context-dao.xml" />
@@ -27,7 +27,7 @@
 		</property>
 	</bean>
 
-	<bean id="saveImeiConsumer" class="com.moneylocker.consumer.consumer.KafkaConsumer"
+	<bean id="saveImeiConsumer" class="com.zfx.consumer.consumer.KafkaConsumer"
 		init-method="start" destroy-method="close">
 		<property name="properties">
 			<util:properties location="save-imei-consumer.properties" />
@@ -41,10 +41,10 @@
 	</bean>
 
 	<bean id="imeSaveMessageHandler"
-		class="com.moneylocker.consumer.handler.SaveImeiMessageHandler">
+		class="com.zfx.consumer.handler.SaveImeiMessageHandler">
 		<property name="imeiPhoneDao" ref="imeiPhoneDao" />
 	</bean>
-	<bean id="imeiPhoneDao" class="com.moneylocker.consumer.dao.impl.ImeiPhoneDaoImpl" />
+	<bean id="imeiPhoneDao" class="com.zfx.consumer.dao.impl.ImeiPhoneDaoImpl" />
 
 
 </beans>

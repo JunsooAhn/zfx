@@ -1,4 +1,4 @@
-package com.moneylocker.common.config.zkimpl;
+package com.zfx.common.config.zkimpl;
 
 import java.io.UnsupportedEncodingException;
 import java.text.SimpleDateFormat;

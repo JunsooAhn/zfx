@@ -1,4 +1,4 @@
-package com.moneylocker.common.exception;
+package com.zfx.common.exception;
 
 public class SystemException extends Exception {
 

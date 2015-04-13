@@ -1,4 +1,4 @@
-package com.moneylocker.frontend.common.processor;
+package com.zfx.frontend.common.processor;
 
 import java.lang.reflect.Method;
 
@@ -7,9 +7,9 @@ import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.moneylocker.common.util.StringUtils;
-import com.moneylocker.frontend.common.bean.Request;
-import com.moneylocker.frontend.common.interceptor.DecryptInterceptor;
+import com.zfx.common.util.StringUtils;
+import com.zfx.frontend.common.bean.Request;
+import com.zfx.frontend.common.interceptor.DecryptInterceptor;
 
 public class RequestClassBeanPostProcessor implements BeanPostProcessor {
 

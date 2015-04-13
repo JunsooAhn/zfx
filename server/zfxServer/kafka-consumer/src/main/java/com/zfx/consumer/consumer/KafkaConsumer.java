@@ -1,4 +1,4 @@
-package com.moneylocker.consumer.consumer;
+package com.zfx.consumer.consumer;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -14,7 +14,7 @@ import kafka.consumer.ConsumerIterator;
 import kafka.consumer.KafkaStream;
 import kafka.javaapi.consumer.ConsumerConnector;
 
-import com.moneylocker.consumer.handler.MessageHandler;
+import com.zfx.consumer.handler.MessageHandler;
 
 public class KafkaConsumer {
 

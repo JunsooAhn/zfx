@@ -7,7 +7,7 @@
 						http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
 						http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 
-	<bean id="cassandraClient" class="com.moneylocker.common.cassandra.api.CassandraClient"
+	<bean id="cassandraClient" class="com.zfx.common.cassandra.api.CassandraClient"
 		init-method="connect" destroy-method="close">
 		<property name="nodes" value="122.144.134.82,122.144.134.67"/>
 	</bean>

@@ -1,7 +1,7 @@
-package com.moneylocker.frontend.account.bean.response;
+package com.zfx.frontend.account.bean.response;
 
-import com.moneylocker.account.bean.UserInfo;
-import com.moneylocker.frontend.common.bean.Response;
+import com.zfx.account.bean.UserInfo;
+import com.zfx.frontend.common.bean.Response;
 
 public class ImeiLoginResponse extends Response {
 

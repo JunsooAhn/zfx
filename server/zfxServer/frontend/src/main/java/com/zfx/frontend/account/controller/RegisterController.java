@@ -1,4 +1,4 @@
-package com.moneylocker.frontend.account.controller;
+package com.zfx.frontend.account.controller;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -8,22 +8,22 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.moneylocker.account.bean.LoginResult;
-import com.moneylocker.account.constant.LoginResultState;
-import com.moneylocker.account.constant.UserVerifyType;
-import com.moneylocker.account.service.LoginService;
-import com.moneylocker.common.service.MemcachedService;
-import com.moneylocker.credit.constant.CreditOperations;
-import com.moneylocker.credit.service.UserCreditService;
-import com.moneylocker.frontend.account.bean.request.RegisterRequest;
-import com.moneylocker.frontend.account.bean.response.RegisterResponse;
-import com.moneylocker.frontend.account.constant.MsgContants;
-import com.moneylocker.frontend.common.bean.ActivityCreditConfig;
-import com.moneylocker.frontend.common.bean.Response;
-import com.moneylocker.frontend.common.bean.VerifyInfo;
-import com.moneylocker.frontend.common.constant.CommonConstant;
-import com.moneylocker.frontend.common.constant.MemcacheKeyConstants;
-import com.moneylocker.frontend.common.controller.BaseController;
+import com.zfx.account.bean.LoginResult;
+import com.zfx.account.constant.LoginResultState;
+import com.zfx.account.constant.UserVerifyType;
+import com.zfx.account.service.LoginService;
+import com.zfx.common.service.MemcachedService;
+import com.zfx.credit.constant.CreditOperations;
+import com.zfx.credit.service.UserCreditService;
+import com.zfx.frontend.account.bean.request.RegisterRequest;
+import com.zfx.frontend.account.bean.response.RegisterResponse;
+import com.zfx.frontend.account.constant.MsgContants;
+import com.zfx.frontend.common.bean.ActivityCreditConfig;
+import com.zfx.frontend.common.bean.Response;
+import com.zfx.frontend.common.bean.VerifyInfo;
+import com.zfx.frontend.common.constant.CommonConstant;
+import com.zfx.frontend.common.constant.MemcacheKeyConstants;
+import com.zfx.frontend.common.controller.BaseController;
 
 @Controller
 @RequestMapping("register")

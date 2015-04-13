@@ -1,12 +1,12 @@
-package com.moneylocker.frontend.common.controller;
+package com.zfx.frontend.common.controller;
 
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 
-import com.moneylocker.frontend.common.bean.Request;
-import com.moneylocker.frontend.common.constant.CommonConstant;
+import com.zfx.frontend.common.bean.Request;
+import com.zfx.frontend.common.constant.CommonConstant;
 
 public class BaseController {
 

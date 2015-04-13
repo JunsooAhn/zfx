@@ -1,10 +1,10 @@
-package com.moneylocker.account.service.impl;
+package com.zfx.account.service.impl;
 
 import java.util.List;
 
-import com.moneylocker.account.bean.AddReferenceResult;
-import com.moneylocker.account.bean.RecommendInfo;
-import com.moneylocker.account.service.RecommendService;
+import com.zfx.account.bean.AddReferenceResult;
+import com.zfx.account.bean.RecommendInfo;
+import com.zfx.account.service.RecommendService;
 
 @org.springframework.stereotype.Service
 public class MockRecommendServiceImpl implements RecommendService {

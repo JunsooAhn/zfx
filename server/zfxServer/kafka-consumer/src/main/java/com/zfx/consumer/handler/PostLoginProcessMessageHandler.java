@@ -1,19 +1,19 @@
-package com.moneylocker.consumer.handler;
+package com.zfx.consumer.handler;
 
 import java.util.Calendar;
 
 import kafka.message.MessageAndMetadata;
 
-import com.moneylocker.account.bean.ImeiPhoneLog;
-import com.moneylocker.account.bean.UserInfo;
-import com.moneylocker.account.bean.UserLoginLog;
-import com.moneylocker.account.constant.LoginResultState;
-import com.moneylocker.account.constant.UserCheatState;
-import com.moneylocker.common.util.DateUtil;
-import com.moneylocker.common.util.JSONUtil;
-import com.moneylocker.consumer.dao.ImeiPhoneDao;
-import com.moneylocker.consumer.dao.UserCheatDao;
-import com.moneylocker.consumer.dao.UserDao;
+import com.zfx.account.bean.ImeiPhoneLog;
+import com.zfx.account.bean.UserInfo;
+import com.zfx.account.bean.UserLoginLog;
+import com.zfx.account.constant.LoginResultState;
+import com.zfx.account.constant.UserCheatState;
+import com.zfx.common.util.DateUtil;
+import com.zfx.common.util.JSONUtil;
+import com.zfx.consumer.dao.ImeiPhoneDao;
+import com.zfx.consumer.dao.UserCheatDao;
+import com.zfx.consumer.dao.UserDao;
 
 public class PostLoginProcessMessageHandler implements MessageHandler {
 

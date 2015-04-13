@@ -1,4 +1,4 @@
-package com.moneylocker.common.service;
+package com.zfx.common.service;
 
 import java.util.Map;
 

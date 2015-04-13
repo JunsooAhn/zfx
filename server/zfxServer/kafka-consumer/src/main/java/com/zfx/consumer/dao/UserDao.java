@@ -1,6 +1,6 @@
-package com.moneylocker.consumer.dao;
+package com.zfx.consumer.dao;
 
-import com.moneylocker.account.bean.UserInfo;
+import com.zfx.account.bean.UserInfo;
 
 public interface UserDao {
 	public UserInfo getUserInfoById(String userId);

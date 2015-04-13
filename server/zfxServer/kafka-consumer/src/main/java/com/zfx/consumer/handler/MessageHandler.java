@@ -1,4 +1,4 @@
-package com.moneylocker.consumer.handler;
+package com.zfx.consumer.handler;
 
 import kafka.message.MessageAndMetadata;
 

@@ -1,4 +1,4 @@
-package com.moneylocker.consumer.constants;
+package com.zfx.consumer.constants;
 
 public enum ParamType {
 	// TEXT and TIMESTAMP are the cassandra types, included here (alongside STRING AND DATE)

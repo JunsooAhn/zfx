@@ -1,4 +1,4 @@
-package com.moneylocker.frontend.account.controller;
+package com.zfx.frontend.account.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -6,13 +6,13 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.moneylocker.account.constant.LoginResultState;
-import com.moneylocker.account.service.LoginService;
-import com.moneylocker.frontend.account.constant.MsgContants;
-import com.moneylocker.frontend.common.bean.Request;
-import com.moneylocker.frontend.common.bean.Response;
-import com.moneylocker.frontend.common.constant.CommonConstant;
-import com.moneylocker.frontend.common.controller.BaseController;
+import com.zfx.account.constant.LoginResultState;
+import com.zfx.account.service.LoginService;
+import com.zfx.frontend.account.constant.MsgContants;
+import com.zfx.frontend.common.bean.Request;
+import com.zfx.frontend.common.bean.Response;
+import com.zfx.frontend.common.constant.CommonConstant;
+import com.zfx.frontend.common.controller.BaseController;
 
 @Controller
 @RequestMapping("logout")

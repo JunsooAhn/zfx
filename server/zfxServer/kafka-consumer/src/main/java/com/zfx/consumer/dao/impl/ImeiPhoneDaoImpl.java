@@ -1,16 +1,16 @@
-package com.moneylocker.consumer.dao.impl;
+package com.zfx.consumer.dao.impl;
 
 import org.springframework.stereotype.Repository;
 
-import com.moneylocker.account.bean.ImeiPhoneLog;
-import com.moneylocker.common.dao.impl.BaseServiceDaoImpl;
-import com.moneylocker.common.util.MapUtil;
-import com.moneylocker.consumer.dao.ImeiPhoneDao;
+import com.zfx.account.bean.ImeiPhoneLog;
+import com.zfx.common.dao.impl.BaseServiceDaoImpl;
+import com.zfx.common.util.MapUtil;
+import com.zfx.consumer.dao.ImeiPhoneDao;
 
 @Repository
 public class ImeiPhoneDaoImpl extends BaseServiceDaoImpl implements ImeiPhoneDao {
 
-	private final static String NAMESPACE = "com.moneylocker.account.bean.ImeiPhoneLog";
+	private final static String NAMESPACE = "com.zfx.account.bean.ImeiPhoneLog";
 
 	@Override
 	public ImeiPhoneLog getImeiPhoneLog(String imei, String androidId, String macAddress) {

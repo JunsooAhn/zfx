@@ -1,6 +1,6 @@
-package com.moneylocker.consumer.dao;
+package com.zfx.consumer.dao;
 
-import com.moneylocker.account.bean.ImeiPhoneLog;
+import com.zfx.account.bean.ImeiPhoneLog;
 
 
 public interface ImeiPhoneDao {

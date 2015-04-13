@@ -1,4 +1,4 @@
-package com.moneylocker.consumer;
+package com.zfx.consumer;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

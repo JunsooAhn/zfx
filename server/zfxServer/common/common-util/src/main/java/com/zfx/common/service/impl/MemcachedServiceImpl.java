@@ -1,4 +1,4 @@
-package com.moneylocker.common.service.impl;
+package com.zfx.common.service.impl;
 
 import java.util.Map;
 
@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.moneylocker.common.service.MemcachedService;
+import com.zfx.common.service.MemcachedService;
 
 @Service(value = "memcachedService")
 public class MemcachedServiceImpl implements MemcachedService {

@@ -1,4 +1,4 @@
-package com.moneylocker.common.util;
+package com.zfx.common.util;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;

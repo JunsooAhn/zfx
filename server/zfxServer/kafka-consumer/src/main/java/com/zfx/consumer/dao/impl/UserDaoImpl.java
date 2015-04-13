@@ -1,15 +1,15 @@
-package com.moneylocker.consumer.dao.impl;
+package com.zfx.consumer.dao.impl;
 
 import org.springframework.stereotype.Repository;
 
-import com.moneylocker.account.bean.UserInfo;
-import com.moneylocker.common.dao.impl.BaseServiceDaoImpl;
-import com.moneylocker.consumer.dao.UserDao;
+import com.zfx.account.bean.UserInfo;
+import com.zfx.common.dao.impl.BaseServiceDaoImpl;
+import com.zfx.consumer.dao.UserDao;
 
 @Repository
 public class UserDaoImpl extends BaseServiceDaoImpl implements UserDao {
 
-	private final static String NAMESPACE_USERINFO = "com.moneylocker.account.bean.UserInfo";
+	private final static String NAMESPACE_USERINFO = "com.zfx.account.bean.UserInfo";
 
 	@Override
 	public UserInfo getUserInfoById(String userId) {

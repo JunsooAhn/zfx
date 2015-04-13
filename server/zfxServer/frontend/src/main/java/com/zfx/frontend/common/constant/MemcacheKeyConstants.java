@@ -1,4 +1,4 @@
-package com.moneylocker.frontend.common.constant;
+package com.zfx.frontend.common.constant;
 
 public class MemcacheKeyConstants {
 

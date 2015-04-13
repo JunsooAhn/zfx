@@ -13,7 +13,7 @@
 						http://code.alibabatech.com/schema/dubbo http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
 
-	<context:component-scan base-package="com.moneylocker" />
+	<context:component-scan base-package="com.zfx" />
 	<aop:aspectj-autoproxy />
 
 	<import resource="classpath:common-spring-context-dao.xml" />
@@ -28,7 +28,7 @@
 		</property>
 	</bean>
 	
-	<bean id="postLoginProcessConsumer" class="com.moneylocker.consumer.consumer.KafkaConsumer"
+	<bean id="postLoginProcessConsumer" class="com.zfx.consumer.consumer.KafkaConsumer"
 		init-method="start" destroy-method="close">
 		<property name="prop" value="post-login-process-consumer.properties" />
 		<property name="properties">
@@ -43,15 +43,15 @@
 	</bean>
 
 	<bean id="logMessageHandler"
-		class="com.moneylocker.consumer.handler.PostLoginProcessMessageHandler">
+		class="com.zfx.consumer.handler.PostLoginProcessMessageHandler">
 		<property name="userDao" ref="userDao" />
 		<property name="userCheatDao" ref="userCheatDao" />
 		<property name="imeiPhoneDao" ref="imeiPhoneDao" />
 	</bean>
 
-	<bean id="userDao" class="com.moneylocker.consumer.dao.impl.UserDaoImpl" />
-	<bean id="userCheatDao" class="com.moneylocker.consumer.dao.impl.UserCheatDaoImpl" />
-	<bean id="imeiPhoneDao" class="com.moneylocker.consumer.dao.impl.ImeiPhoneDaoImpl" />
+	<bean id="userDao" class="com.zfx.consumer.dao.impl.UserDaoImpl" />
+	<bean id="userCheatDao" class="com.zfx.consumer.dao.impl.UserCheatDaoImpl" />
+	<bean id="imeiPhoneDao" class="com.zfx.consumer.dao.impl.ImeiPhoneDaoImpl" />
 
 
 </beans>

@@ -1,4 +1,4 @@
-package com.moneylocker.frontend.account.constant;
+package com.zfx.frontend.account.constant;
 
 public class MsgContants {
 

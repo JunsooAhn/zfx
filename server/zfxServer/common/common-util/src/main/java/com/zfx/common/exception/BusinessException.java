@@ -1,4 +1,4 @@
-package com.moneylocker.common.exception;
+package com.zfx.common.exception;
 
 public class BusinessException extends RuntimeException {
 

@@ -7,7 +7,7 @@
     <Console name="Console" target="SYSTEM_OUT">
       <PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %m%n"/>
     </Console>
-    <RollingFile name="ErrorFile" fileName="${log-path}/moneylocker_error.log" filePattern="${log-path}/moneylocker_error_%d{yyyy-MM-dd}_%i.log">
+    <RollingFile name="ErrorFile" fileName="${log-path}/zfx_error.log" filePattern="${log-path}/zfx_error_%d{yyyy-MM-dd}_%i.log">
     	<ThresholdFilter level="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
     	<PatternLayout pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{36} - %m%n"/>
     	<Policies>

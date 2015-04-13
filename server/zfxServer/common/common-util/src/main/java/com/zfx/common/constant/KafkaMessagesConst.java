@@ -1,4 +1,4 @@
-package com.moneylocker.common.constant;
+package com.zfx.common.constant;
 
 public class KafkaMessagesConst {
 

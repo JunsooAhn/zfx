@@ -1,6 +1,6 @@
-package com.moneylocker.frontend.common.bean;
+package com.zfx.frontend.common.bean;
 
-import com.moneylocker.common.config.BasePropertyConfig;
+import com.zfx.common.config.BasePropertyConfig;
 
 public class AccountConfig extends BasePropertyConfig {
 

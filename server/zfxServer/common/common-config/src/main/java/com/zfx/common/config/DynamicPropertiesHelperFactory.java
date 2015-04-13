@@ -1,4 +1,4 @@
-package com.moneylocker.common.config;
+package com.zfx.common.config;
 
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;

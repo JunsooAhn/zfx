@@ -1,4 +1,4 @@
-package com.moneylocker.common.config;
+package com.zfx.common.config;
 
 import java.util.Enumeration;
 import java.util.Properties;

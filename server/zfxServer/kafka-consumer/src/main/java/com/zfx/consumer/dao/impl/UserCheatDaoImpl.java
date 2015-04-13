@@ -1,18 +1,18 @@
-package com.moneylocker.consumer.dao.impl;
+package com.zfx.consumer.dao.impl;
 
 import java.util.Date;
 
 import org.springframework.stereotype.Repository;
 
-import com.moneylocker.account.bean.UserLoginLog;
-import com.moneylocker.common.dao.impl.BaseServiceDaoImpl;
-import com.moneylocker.common.util.MapUtil;
-import com.moneylocker.consumer.dao.UserCheatDao;
+import com.zfx.account.bean.UserLoginLog;
+import com.zfx.common.dao.impl.BaseServiceDaoImpl;
+import com.zfx.common.util.MapUtil;
+import com.zfx.consumer.dao.UserCheatDao;
 
 @Repository
 public class UserCheatDaoImpl extends BaseServiceDaoImpl implements UserCheatDao {
 
-	private static String NAME_SPACE_INFO = "com.moneylocker.account.bean.UserLoginResult";
+	private static String NAME_SPACE_INFO = "com.zfx.account.bean.UserLoginResult";
 
 	@Override
 	public boolean addUserLoginToCheatList(UserLoginLog loginResult) {

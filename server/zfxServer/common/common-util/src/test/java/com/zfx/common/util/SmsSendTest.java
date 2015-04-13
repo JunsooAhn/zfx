@@ -1,9 +1,9 @@
-package com.moneylocker.common.util;
+package com.zfx.common.util;
 
 import org.junit.Test;
 
-import com.moneylocker.common.util.verify.VerifyInterface;
-import com.moneylocker.common.util.verify.impl.eucp.EucpMessageVerifyImpl;
+import com.zfx.common.util.verify.VerifyInterface;
+import com.zfx.common.util.verify.impl.eucp.EucpMessageVerifyImpl;
 
 public class SmsSendTest {
 

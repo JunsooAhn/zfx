@@ -1,4 +1,4 @@
-package com.moneylocker.frontend.common.bean;
+package com.zfx.frontend.common.bean;
 
 public class Response {
 

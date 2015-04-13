@@ -1,4 +1,4 @@
-package com.moneylocker.common.dao.impl;
+package com.zfx.common.dao.impl;
 
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.mybatis.spring.support.SqlSessionDaoSupport;

@@ -1,4 +1,4 @@
-package com.moneylocker.frontend.account.interceptor;
+package com.zfx.frontend.account.interceptor;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -7,12 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.moneylocker.account.constant.LoginState;
-import com.moneylocker.account.service.LoginService;
-import com.moneylocker.common.util.JSONUtil;
-import com.moneylocker.frontend.common.bean.Request;
-import com.moneylocker.frontend.common.bean.Response;
-import com.moneylocker.frontend.common.constant.CommonConstant;
+import com.zfx.account.constant.LoginState;
+import com.zfx.account.service.LoginService;
+import com.zfx.common.util.JSONUtil;
+import com.zfx.frontend.common.bean.Request;
+import com.zfx.frontend.common.bean.Response;
+import com.zfx.frontend.common.constant.CommonConstant;
 
 public class LoginInterceptor implements HandlerInterceptor {
 

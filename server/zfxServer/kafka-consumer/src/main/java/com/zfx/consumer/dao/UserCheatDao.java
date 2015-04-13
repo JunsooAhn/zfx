@@ -1,6 +1,6 @@
-package com.moneylocker.consumer.dao;
+package com.zfx.consumer.dao;
 
-import com.moneylocker.account.bean.UserLoginLog;
+import com.zfx.account.bean.UserLoginLog;
 
 public interface UserCheatDao {
 

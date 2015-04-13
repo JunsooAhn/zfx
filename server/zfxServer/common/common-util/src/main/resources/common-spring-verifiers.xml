@@ -8,9 +8,9 @@
 						http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 
 	<bean id="voiceVerifier"
-		class="com.moneylocker.common.util.verify.impl.cloopen.CloopenVerifyImpl"></bean>
+		class="com.zfx.common.util.verify.impl.cloopen.CloopenVerifyImpl"></bean>
 	<bean id="smsVerifier"
-		class="com.moneylocker.common.util.verify.impl.eucp.EucpMessageVerifyImpl"></bean>
+		class="com.zfx.common.util.verify.impl.eucp.EucpMessageVerifyImpl"></bean>
 
 
 </beans>

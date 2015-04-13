@@ -1,8 +1,8 @@
-package com.moneylocker.account.service.impl;
+package com.zfx.account.service.impl;
 
 import org.springframework.stereotype.Service;
 
-import com.moneylocker.account.service.AccountService;
+import com.zfx.account.service.AccountService;
 
 @Service
 public class MockAccountServiceImpl implements AccountService {

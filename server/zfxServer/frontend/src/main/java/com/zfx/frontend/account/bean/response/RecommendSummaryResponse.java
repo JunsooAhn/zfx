@@ -1,6 +1,6 @@
-package com.moneylocker.frontend.account.bean.response;
+package com.zfx.frontend.account.bean.response;
 
-import com.moneylocker.frontend.common.bean.Response;
+import com.zfx.frontend.common.bean.Response;
 
 public class RecommendSummaryResponse extends Response {
 

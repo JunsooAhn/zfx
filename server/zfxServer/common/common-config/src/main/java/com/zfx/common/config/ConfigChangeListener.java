@@ -1,4 +1,4 @@
-package com.moneylocker.common.config;
+package com.zfx.common.config;
 
 /**
  * 监听器，监听配置的改变

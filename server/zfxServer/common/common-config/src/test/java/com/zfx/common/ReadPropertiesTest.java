@@ -1,11 +1,11 @@
-package com.moneylocker.common;
+package com.zfx.common;
 
 import junit.framework.TestCase;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.moneylocker.common.config.DynamicPropertiesHelper;
-import com.moneylocker.common.config.DynamicPropertiesHelperFactory;
+import com.zfx.common.config.DynamicPropertiesHelper;
+import com.zfx.common.config.DynamicPropertiesHelperFactory;
 
 public class ReadPropertiesTest extends TestCase {
 	private DynamicPropertiesHelperFactory helperFactory;

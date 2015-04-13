@@ -1,4 +1,4 @@
-package com.moneylocker.consumer.handler;
+package com.zfx.consumer.handler;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,9 +14,9 @@ import com.alibaba.fastjson.JSONObject;
 import com.datastax.driver.core.BoundStatement;
 import com.datastax.driver.core.PreparedStatement;
 import com.datastax.driver.core.Session;
-import com.moneylocker.common.cassandra.api.CassandraClient;
-import com.moneylocker.consumer.constants.ParamType;
-import com.moneylocker.consumer.consumer.KafkaConsumer;
+import com.zfx.common.cassandra.api.CassandraClient;
+import com.zfx.consumer.constants.ParamType;
+import com.zfx.consumer.consumer.KafkaConsumer;
 
 public class LogMessageHandler implements MessageHandler {
 

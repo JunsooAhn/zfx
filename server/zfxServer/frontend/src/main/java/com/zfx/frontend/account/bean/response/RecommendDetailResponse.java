@@ -1,9 +1,9 @@
-package com.moneylocker.frontend.account.bean.response;
+package com.zfx.frontend.account.bean.response;
 
 import java.util.List;
 
-import com.moneylocker.account.bean.RecommendInfo;
-import com.moneylocker.frontend.common.bean.Response;
+import com.zfx.account.bean.RecommendInfo;
+import com.zfx.frontend.common.bean.Response;
 
 public class RecommendDetailResponse extends Response {
 

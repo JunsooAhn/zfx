@@ -1,4 +1,4 @@
-package com.moneylocker.common.config.zkimpl;
+package com.zfx.common.config.zkimpl;
 
 import java.util.List;
 
@@ -6,8 +6,8 @@ import org.I0Itec.zkclient.IZkDataListener;
 import org.I0Itec.zkclient.ZkClient;
 import org.apache.commons.lang.StringUtils;
 
-import com.moneylocker.common.config.ConfigChangeListener;
-import com.moneylocker.common.config.ConfigChangeSubscriber;
+import com.zfx.common.config.ConfigChangeListener;
+import com.zfx.common.config.ConfigChangeSubscriber;
 
 /**
  * 订阅者实现类，当订阅到zk数据改变时，会触发ConfigChangeListener

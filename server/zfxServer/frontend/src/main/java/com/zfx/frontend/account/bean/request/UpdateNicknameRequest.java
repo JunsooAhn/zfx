@@ -1,9 +1,9 @@
-package com.moneylocker.frontend.account.bean.request;
+package com.zfx.frontend.account.bean.request;
 
-import com.moneylocker.common.util.StringUtils;
-import com.moneylocker.frontend.account.constant.MsgContants;
-import com.moneylocker.frontend.common.bean.Request;
-import com.moneylocker.frontend.common.bean.Response;
+import com.zfx.common.util.StringUtils;
+import com.zfx.frontend.account.constant.MsgContants;
+import com.zfx.frontend.common.bean.Request;
+import com.zfx.frontend.common.bean.Response;
 
 public class UpdateNicknameRequest extends Request {
 

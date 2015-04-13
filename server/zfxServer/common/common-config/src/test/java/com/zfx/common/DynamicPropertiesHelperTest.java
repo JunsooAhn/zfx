@@ -1,4 +1,4 @@
-package com.moneylocker.common;
+package com.zfx.common;
 //package com.embracesource.config;
 //
 //import java.util.concurrent.CountDownLatch;

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>  
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.moneylocker.account.bean.UserInfo">
+<mapper namespace="com.zfx.account.bean.UserInfo">
 	<sql id="userInfoColumns">
 		id as userId,
 		user_nick as nickName ,
@@ -19,7 +19,7 @@
 		state as state
 	</sql>
 	
-	<select id="findByUserId" resultType="com.moneylocker.account.bean.UserInfo">
+	<select id="findByUserId" resultType="com.zfx.account.bean.UserInfo">
 		select
 		<include refid="userInfoColumns" />
 		,

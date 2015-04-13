@@ -1,10 +1,10 @@
-package com.moneylocker.common;
+package com.zfx.common;
 
 import java.lang.reflect.InvocationTargetException;
 
 import org.apache.commons.beanutils.BeanUtils;
 
-import com.moneylocker.common.config.DynamicPropertiesHelper.PropertyConvertHandler;
+import com.zfx.common.config.DynamicPropertiesHelper.PropertyConvertHandler;
 
 public class ConfigABean implements PropertyConvertHandler{
 	private ConfigABean() {

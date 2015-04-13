@@ -1,7 +1,7 @@
-package com.moneylocker.frontend.common.bean;
+package com.zfx.frontend.common.bean;
 
-import com.moneylocker.common.util.StringUtils;
-import com.moneylocker.frontend.common.constant.MsgContants;
+import com.zfx.common.util.StringUtils;
+import com.zfx.frontend.common.constant.MsgContants;
 
 public class VerifyRequest extends Request {
 

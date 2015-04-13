@@ -18,7 +18,7 @@
 
 	<context:annotation-config />
 
-	<context:component-scan base-package="com.moneylocker.common.config" />
+	<context:component-scan base-package="com.zfx.common.config" />
 
 	<bean id="zkPropertyConfigurer"
 		class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
@@ -27,7 +27,7 @@
 		<property name="location" value="classpath:zkpublisher.properties" />
 	</bean>
 
-	<bean id="zkSerializer" class="com.moneylocker.common.config.zkimpl.ZkUtils.StringSerializer">
+	<bean id="zkSerializer" class="com.zfx.common.config.zkimpl.ZkUtils.StringSerializer">
 		<constructor-arg value="${ZK_CONF_ENCODING}" />
 	</bean>
 
@@ -37,12 +37,12 @@
 		<property name="zkSerializer" ref="zkSerializer"></property>
 	</bean>
 
-	<bean id="configChangeSubscriber" class="com.moneylocker.common.config.zkimpl.ZkConfigChangeSubscriberImpl">
+	<bean id="configChangeSubscriber" class="com.zfx.common.config.zkimpl.ZkConfigChangeSubscriberImpl">
 		<constructor-arg ref="zkClient"></constructor-arg>
 		<constructor-arg value="${ZK_CONFIG_ROOTNODE}"></constructor-arg>
 	</bean>
 
-	<bean id="helperFactory" class="com.moneylocker.common.config.DynamicPropertiesHelperFactory">
+	<bean id="helperFactory" class="com.zfx.common.config.DynamicPropertiesHelperFactory">
 		<constructor-arg ref="configChangeSubscriber"></constructor-arg>
 	</bean>
 

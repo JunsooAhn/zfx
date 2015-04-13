@@ -1,8 +1,8 @@
-package com.moneylocker.frontend.common.bean;
+package com.zfx.frontend.common.bean;
 
 import org.springframework.util.StringUtils;
 
-import com.moneylocker.frontend.common.constant.MsgContants;
+import com.zfx.frontend.common.constant.MsgContants;
 
 public class Request {
 
