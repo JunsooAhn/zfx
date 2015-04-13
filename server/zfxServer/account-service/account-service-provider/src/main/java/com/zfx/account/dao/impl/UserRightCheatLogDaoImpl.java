@@ -1,9 +1,9 @@
-package com.moneylocker.account.dao.impl;
+package com.zfx.account.dao.impl;
 
 import org.springframework.stereotype.Repository;
 
-import com.moneylocker.account.dao.UserRightCheatLogDao;
-import com.moneylocker.common.dao.impl.BaseServiceDaoImpl;
+import com.zfx.account.dao.UserRightCheatLogDao;
+import com.zfx.common.dao.impl.BaseServiceDaoImpl;
 
 @Repository
 public class UserRightCheatLogDaoImpl  extends BaseServiceDaoImpl implements UserRightCheatLogDao{

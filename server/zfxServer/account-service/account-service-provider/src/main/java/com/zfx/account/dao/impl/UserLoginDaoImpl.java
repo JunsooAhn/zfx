@@ -1,19 +1,19 @@
-package com.moneylocker.account.dao.impl;
+package com.zfx.account.dao.impl;
 
 import java.util.Date;
 
 import org.springframework.stereotype.Repository;
 
-import com.moneylocker.account.bean.LoginInfo;
-import com.moneylocker.account.dao.UserLoginDao;
-import com.moneylocker.common.dao.impl.BaseServiceDaoImpl;
-import com.moneylocker.common.util.MapUtil;
-import com.moneylocker.common.util.UUIDGenerator;
+import com.zfx.account.bean.LoginInfo;
+import com.zfx.account.dao.UserLoginDao;
+import com.zfx.common.dao.impl.BaseServiceDaoImpl;
+import com.zfx.common.util.MapUtil;
+import com.zfx.common.util.UUIDGenerator;
 
 @Repository
 public class UserLoginDaoImpl extends BaseServiceDaoImpl implements UserLoginDao {
 
-	private final static String NAMESPACE_USERLOGIN = "com.moneylocker.account.bean.UserLogin";
+	private final static String NAMESPACE_USERLOGIN = "com.zfx.account.bean.UserLogin";
 
 	@Override
 	public LoginInfo getUserLoginByLoginId(String loginId) {

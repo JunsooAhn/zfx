@@ -1,4 +1,4 @@
-package com.moneylocker.account.dao.impl;
+package com.zfx.account.dao.impl;
 
 import java.util.Date;
 import java.util.List;
@@ -6,16 +6,16 @@ import java.util.Map;
 
 import org.springframework.stereotype.Repository;
 
-import com.moneylocker.account.bean.UserInfo;
-import com.moneylocker.account.dao.UserInfoDao;
-import com.moneylocker.common.dao.impl.BaseServiceDaoImpl;
-import com.moneylocker.common.util.EncryptUtil;
-import com.moneylocker.common.util.MapUtil;
+import com.zfx.account.bean.UserInfo;
+import com.zfx.account.dao.UserInfoDao;
+import com.zfx.common.dao.impl.BaseServiceDaoImpl;
+import com.zfx.common.util.EncryptUtil;
+import com.zfx.common.util.MapUtil;
 
 @Repository
 public class UserInfoDaoImpl extends BaseServiceDaoImpl implements UserInfoDao {
 
-	private final static String NAMESPACE_USERINFO = "com.moneylocker.account.bean.UserInfo";
+	private final static String NAMESPACE_USERINFO = "com.zfx.account.bean.UserInfo";
 
 	@Override
 	public boolean rebindPhone(String userId, String phone, String oldPhone, String updatePhoneTime, Short verType) {

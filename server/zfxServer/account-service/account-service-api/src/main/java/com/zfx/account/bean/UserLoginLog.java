@@ -1,4 +1,4 @@
-package com.moneylocker.account.bean;
+package com.zfx.account.bean;
 
 import java.io.Serializable;
 import java.util.Date;

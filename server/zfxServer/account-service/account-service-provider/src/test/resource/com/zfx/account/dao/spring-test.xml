@@ -15,10 +15,10 @@
 			</list>
 		</property>
 	</bean>
-	<context:component-scan base-package="com.moneylocker" />
+	<context:component-scan base-package="com.zfx" />
 	<aop:aspectj-autoproxy />
 
-	<bean id="userCreditService" class="com.moneylocker.account.service.impl.MockUserCreditServiceImpl" /> 
+	<bean id="userCreditService" class="com.zfx.account.service.impl.MockUserCreditServiceImpl" /> 
 	<import resource="classpath:common-spring-context-dao.xml"/>
   	<import resource="classpath:common-spring-context-memcache.xml"/>
   	<import resource="classpath:common-spring-context-kafka-producer.xml"/>

@@ -1,6 +1,6 @@
-package com.moneylocker.account.service;
+package com.zfx.account.service;
 
-import com.moneylocker.account.bean.LoginResult;
+import com.zfx.account.bean.LoginResult;
 
 public interface LoginService {
 

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" ?>  
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.moneylocker.account.bean.ImeiPhoneLog">
+<mapper namespace="com.zfx.account.bean.ImeiPhoneLog">
 
-	<select id="getImeiPhoneLog" resultType="com.moneylocker.account.bean.ImeiPhoneLog">
+	<select id="getImeiPhoneLog" resultType="com.zfx.account.bean.ImeiPhoneLog">
 		select * from ml_imei_phone_log u where u.imei = #{imei} ;
 	</select>
 	

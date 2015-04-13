@@ -1,4 +1,4 @@
-package com.moneylocker.account.constant;
+package com.zfx.account.constant;
 
 public class RebindPhoneState {
 

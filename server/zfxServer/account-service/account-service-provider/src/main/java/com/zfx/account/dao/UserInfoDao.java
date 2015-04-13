@@ -1,9 +1,9 @@
-package com.moneylocker.account.dao;
+package com.zfx.account.dao;
 
 import java.util.List;
 import java.util.Map;
 
-import com.moneylocker.account.bean.UserInfo;
+import com.zfx.account.bean.UserInfo;
 
 public interface UserInfoDao {
 

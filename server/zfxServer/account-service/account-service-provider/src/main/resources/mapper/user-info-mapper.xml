@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>  
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.moneylocker.account.bean.UserInfo">
+<mapper namespace="com.zfx.account.bean.UserInfo">
 	<sql id="userInfoColumns">
 		id as userId,
 		user_nick as nickName ,
@@ -46,14 +46,14 @@
 		limit 1;
 	</select>
 
-	<select id="findRegUserImei" resultType="com.moneylocker.account.bean.UserInfo">
+	<select id="findRegUserImei" resultType="com.zfx.account.bean.UserInfo">
 		select
 		<include refid="userInfoColumns" />
 		from hq_user_info u where u.reg_user_imei = #{imei} and u.user_source
 		= 0 limit 2;
 	</select>
 
-	<select id="findRegUserByDevice" resultType="com.moneylocker.account.bean.UserInfo">
+	<select id="findRegUserByDevice" resultType="com.zfx.account.bean.UserInfo">
 		select
 		<include refid="userInfoColumns" />
 		from hq_user_info u
@@ -218,7 +218,7 @@
 		#{baiduGroup} where id = #{userId};
 	</update>
 
-	<select id="findByUserPhone" resultType="com.moneylocker.account.bean.UserInfo">
+	<select id="findByUserPhone" resultType="com.zfx.account.bean.UserInfo">
 		select
 		<include refid="userInfoColumns" />
 		,
@@ -273,7 +273,7 @@
 		from hq_user_info where user_phone = #{phone};
 	</select>
 
-	<select id="findByUserId" resultType="com.moneylocker.account.bean.UserInfo">
+	<select id="findByUserId" resultType="com.zfx.account.bean.UserInfo">
 		select
 		<include refid="userInfoColumns" />
 		,

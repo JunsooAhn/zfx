@@ -1,4 +1,4 @@
-package com.moneylocker.account.service.impl;
+package com.zfx.account.service.impl;
 
 import java.util.List;
 
@@ -11,12 +11,12 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.moneylocker.account.bean.AddReferenceResult;
-import com.moneylocker.account.bean.LoginResult;
-import com.moneylocker.account.bean.RecommendInfo;
-import com.moneylocker.account.constant.AddReferencesState;
-import com.moneylocker.account.service.LoginService;
-import com.moneylocker.account.service.RecommendService;
+import com.zfx.account.bean.AddReferenceResult;
+import com.zfx.account.bean.LoginResult;
+import com.zfx.account.bean.RecommendInfo;
+import com.zfx.account.constant.AddReferencesState;
+import com.zfx.account.service.LoginService;
+import com.zfx.account.service.RecommendService;
 
 @RunWith(value = SpringJUnit4ClassRunner.class)
 @ContextConfiguration(value = "spring-test.xml")

@@ -1,13 +1,13 @@
-package com.moneylocker.account.service.impl;
+package com.zfx.account.service.impl;
 
 import java.util.List;
 
-import com.moneylocker.credit.bean.CreditObtainRecord;
-import com.moneylocker.credit.bean.UserCreditDetail;
-import com.moneylocker.credit.bean.UserCreditSummary;
-import com.moneylocker.credit.bean.UserDailyIncomeStatistic;
-import com.moneylocker.credit.bean.UserIncomeCompositeDetail;
-import com.moneylocker.credit.service.UserCreditService;
+import com.zfx.credit.bean.CreditObtainRecord;
+import com.zfx.credit.bean.UserCreditDetail;
+import com.zfx.credit.bean.UserCreditSummary;
+import com.zfx.credit.bean.UserDailyIncomeStatistic;
+import com.zfx.credit.bean.UserIncomeCompositeDetail;
+import com.zfx.credit.service.UserCreditService;
 
 public class MockUserCreditServiceImpl implements UserCreditService {
 

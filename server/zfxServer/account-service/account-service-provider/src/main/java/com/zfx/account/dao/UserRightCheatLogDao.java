@@ -1,4 +1,4 @@
-package com.moneylocker.account.dao;
+package com.zfx.account.dao;
 
 
 public interface UserRightCheatLogDao {

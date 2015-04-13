@@ -1,9 +1,9 @@
-package com.moneylocker.account.service;
+package com.zfx.account.service;
 
 import java.util.List;
 
-import com.moneylocker.account.bean.AddReferenceResult;
-import com.moneylocker.account.bean.RecommendInfo;
+import com.zfx.account.bean.AddReferenceResult;
+import com.zfx.account.bean.RecommendInfo;
 
 
 public interface RecommendService {

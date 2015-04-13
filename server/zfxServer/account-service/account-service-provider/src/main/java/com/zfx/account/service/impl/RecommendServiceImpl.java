@@ -1,4 +1,4 @@
-package com.moneylocker.account.service.impl;
+package com.zfx.account.service.impl;
 
 import java.util.List;
 import java.util.Map;
@@ -8,15 +8,15 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.moneylocker.account.bean.AddReferenceResult;
-import com.moneylocker.account.bean.RecommendInfo;
-import com.moneylocker.account.constant.AddReferencesState;
-import com.moneylocker.account.constant.UserInfoType;
-import com.moneylocker.account.constant.UserPartInfoType;
-import com.moneylocker.account.dao.RecommendLogDao;
-import com.moneylocker.account.dao.UserInfoDao;
-import com.moneylocker.account.service.RecommendService;
-import com.moneylocker.common.util.StringUtils;
+import com.zfx.account.bean.AddReferenceResult;
+import com.zfx.account.bean.RecommendInfo;
+import com.zfx.account.constant.AddReferencesState;
+import com.zfx.account.constant.UserInfoType;
+import com.zfx.account.constant.UserPartInfoType;
+import com.zfx.account.dao.RecommendLogDao;
+import com.zfx.account.dao.UserInfoDao;
+import com.zfx.account.service.RecommendService;
+import com.zfx.common.util.StringUtils;
 
 @Service(value = "recommendService")
 @Transactional(value = "serviceTxManager")

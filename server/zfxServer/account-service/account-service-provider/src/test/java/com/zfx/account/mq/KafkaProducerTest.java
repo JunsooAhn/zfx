@@ -1,4 +1,4 @@
-package com.moneylocker.account.mq;
+package com.zfx.account.mq;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -9,8 +9,8 @@ import org.junit.Before;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import com.moneylocker.account.bean.UserLoginLog;
-import com.moneylocker.common.util.KafkaProducer;
+import com.zfx.account.bean.UserLoginLog;
+import com.zfx.common.util.KafkaProducer;
 
 public class KafkaProducerTest {
 

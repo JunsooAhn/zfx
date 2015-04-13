@@ -1,4 +1,4 @@
-package com.moneylocker.account.bean;
+package com.zfx.account.bean;
 
 public class UserRightCheatLog implements java.io.Serializable {
 

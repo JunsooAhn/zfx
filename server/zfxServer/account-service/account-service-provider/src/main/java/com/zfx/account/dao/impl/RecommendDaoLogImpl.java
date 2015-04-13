@@ -1,19 +1,19 @@
-package com.moneylocker.account.dao.impl;
+package com.zfx.account.dao.impl;
 
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
 
-import com.moneylocker.account.bean.RecommendInfo;
-import com.moneylocker.account.dao.RecommendLogDao;
-import com.moneylocker.common.dao.impl.BaseServiceDaoImpl;
-import com.moneylocker.common.util.MapUtil;
-import com.moneylocker.common.util.UUIDGenerator;
+import com.zfx.account.bean.RecommendInfo;
+import com.zfx.account.dao.RecommendLogDao;
+import com.zfx.common.dao.impl.BaseServiceDaoImpl;
+import com.zfx.common.util.MapUtil;
+import com.zfx.common.util.UUIDGenerator;
 
 @Repository
 public class RecommendDaoLogImpl extends BaseServiceDaoImpl implements RecommendLogDao {
 
-	private final static String NAMESPACE_RECOMMEND_LOG = "com.moneylocker.account.bean.RecommendLog";
+	private final static String NAMESPACE_RECOMMEND_LOG = "com.zfx.account.bean.RecommendLog";
 
 	@Override
 	public void addRecommendLog(String rUserId, String rPhone, String rRecommendCode, String rdUserId, int credit) {

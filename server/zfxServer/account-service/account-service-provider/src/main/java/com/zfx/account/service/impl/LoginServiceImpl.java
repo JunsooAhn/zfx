@@ -1,4 +1,4 @@
-package com.moneylocker.account.service.impl;
+package com.zfx.account.service.impl;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -10,28 +10,28 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.moneylocker.account.bean.ImeiPhoneLog;
-import com.moneylocker.account.bean.LoginInfo;
-import com.moneylocker.account.bean.LoginResult;
-import com.moneylocker.account.bean.UserInfo;
-import com.moneylocker.account.bean.UserLoginLog;
-import com.moneylocker.account.constant.LoginResultState;
-import com.moneylocker.account.constant.LoginState;
-import com.moneylocker.account.constant.MemcacheKeyConstants;
-import com.moneylocker.account.constant.UserInfoType;
-import com.moneylocker.account.constant.UserState;
-import com.moneylocker.account.dao.UserInfoDao;
-import com.moneylocker.account.dao.UserLoginDao;
-import com.moneylocker.account.service.LoginService;
-import com.moneylocker.common.constant.CommonConstants;
-import com.moneylocker.common.constant.KafkaMessagesConst;
-import com.moneylocker.common.service.MemcachedService;
-import com.moneylocker.common.util.DateUtil;
-import com.moneylocker.common.util.EncryptUtil;
-import com.moneylocker.common.util.KafkaProducer;
-import com.moneylocker.common.util.RandomUtil;
-import com.moneylocker.common.util.UUIDGenerator;
-import com.moneylocker.credit.service.UserCreditService;
+import com.zfx.account.bean.ImeiPhoneLog;
+import com.zfx.account.bean.LoginInfo;
+import com.zfx.account.bean.LoginResult;
+import com.zfx.account.bean.UserInfo;
+import com.zfx.account.bean.UserLoginLog;
+import com.zfx.account.constant.LoginResultState;
+import com.zfx.account.constant.LoginState;
+import com.zfx.account.constant.MemcacheKeyConstants;
+import com.zfx.account.constant.UserInfoType;
+import com.zfx.account.constant.UserState;
+import com.zfx.account.dao.UserInfoDao;
+import com.zfx.account.dao.UserLoginDao;
+import com.zfx.account.service.LoginService;
+import com.zfx.common.constant.CommonConstants;
+import com.zfx.common.constant.KafkaMessagesConst;
+import com.zfx.common.service.MemcachedService;
+import com.zfx.common.util.DateUtil;
+import com.zfx.common.util.EncryptUtil;
+import com.zfx.common.util.KafkaProducer;
+import com.zfx.common.util.RandomUtil;
+import com.zfx.common.util.UUIDGenerator;
+import com.zfx.credit.service.UserCreditService;
 
 @Service(value = "loginService")
 @Transactional(value = "serviceTxManager")

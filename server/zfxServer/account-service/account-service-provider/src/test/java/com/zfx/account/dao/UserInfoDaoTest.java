@@ -1,4 +1,4 @@
-package com.moneylocker.account.dao;
+package com.zfx.account.dao;
 
 import java.util.List;
 import java.util.Map;
@@ -13,9 +13,9 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.moneylocker.account.bean.UserInfo;
-import com.moneylocker.account.constant.UserPartInfoType;
-import com.moneylocker.common.util.EncryptUtil;
+import com.zfx.account.bean.UserInfo;
+import com.zfx.account.constant.UserPartInfoType;
+import com.zfx.common.util.EncryptUtil;
 
 @RunWith(value = SpringJUnit4ClassRunner.class)
 @ContextConfiguration(value = "spring-test.xml")

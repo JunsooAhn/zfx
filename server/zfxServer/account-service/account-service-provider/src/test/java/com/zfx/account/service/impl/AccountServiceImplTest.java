@@ -1,4 +1,4 @@
-package com.moneylocker.account.service.impl;
+package com.zfx.account.service.impl;
 
 import java.util.UUID;
 
@@ -11,12 +11,12 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.moneylocker.account.bean.LoginResult;
-import com.moneylocker.account.constant.LoginResultState;
-import com.moneylocker.account.constant.RebindPhoneState;
-import com.moneylocker.account.constant.UpdateInfoState;
-import com.moneylocker.account.service.AccountService;
-import com.moneylocker.account.service.LoginService;
+import com.zfx.account.bean.LoginResult;
+import com.zfx.account.constant.LoginResultState;
+import com.zfx.account.constant.RebindPhoneState;
+import com.zfx.account.constant.UpdateInfoState;
+import com.zfx.account.service.AccountService;
+import com.zfx.account.service.LoginService;
 
 @RunWith(value = SpringJUnit4ClassRunner.class)
 @ContextConfiguration(value = "spring-test.xml")

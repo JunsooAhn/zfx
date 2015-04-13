@@ -1,8 +1,8 @@
-package com.moneylocker.account.dao;
+package com.zfx.account.dao;
 
 import java.util.List;
 
-import com.moneylocker.account.bean.RecommendInfo;
+import com.zfx.account.bean.RecommendInfo;
 
 public interface RecommendLogDao {
 

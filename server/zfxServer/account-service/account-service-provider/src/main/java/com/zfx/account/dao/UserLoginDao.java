@@ -1,6 +1,6 @@
-package com.moneylocker.account.dao;
+package com.zfx.account.dao;
 
-import com.moneylocker.account.bean.LoginInfo;
+import com.zfx.account.bean.LoginInfo;
 
 public interface UserLoginDao {
 
